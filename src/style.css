@@ -4,15 +4,67 @@
   box-sizing: border-box;
 }
 
-h1 {
-  color: orange;
+:root {
+  --primary-color: #ffa500;
+  --secondary-color: #008000;
+}
+/* Font size 14px */
+html {
+  font-size: 87.5%;
 }
 
+body {
+  font-family: 'Nunito', sans-serif;
+}
+
+header {
+  margin-top: 20px;
+  margin-bottom: 50px;
+}
+
+h1 {
+  color: var(--primary-color);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+footer {
+  margin: 50px auto;
+  text-align: center;
+}
+
+footer a,
+footer a:link,
+footer a:visited,
+footer a:active {
+  display: inline-block;
+  text-align: center;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 1.2rem;
+  margin-right: 0.8rem;
+}
+
+footer a:hover {
+  color: var(--secondary-color);
+}
+
+/* Home */
+.home-container,
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Photo */
 .container {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
+  grid-template-rows: repeat(6, 1fr);
   gap: 1rem;
+  margin: 0 1rem;
 }
 
 .img-croissant {
@@ -61,4 +113,27 @@ h1 {
   grid-column-end: 9;
   grid-row-start: 5;
   grid-row-end: 7;
+}
+
+@media (max-width: 600px) {
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 3rem;
+  }
+}
+
+/* Contact */
+.contact-container p {
+  text-align: center;
+}
+
+.email {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.email:hover {
+  color: var(--primary-color);
 }
